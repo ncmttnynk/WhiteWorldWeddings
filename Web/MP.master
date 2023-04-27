@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP.master.cs" Inherits="MP" %>
+
+<%@ Register Src="~/usercontrols/UC_Footer.ascx" TagName="UC_Footer" TagPrefix="uc2" %>
+<%@ Register Src="~/usercontrols/UC_Header.ascx" TagName="UC_Header" TagPrefix="uc3" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/chosen.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="/Compress.ashx?css=/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400italic,400,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,100,100italic,300italic,400,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="/js/notifyit/notifIt.css" rel="stylesheet" />
+    <link href="/css/owl.carousel.css" rel="stylesheet" />
+    <link href="/css/animate.css" rel="stylesheet" />
+    <script src="/js/notifyit/notifIt.js"></script>
+    <%-- FAV ICON --%>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="noindex,nofollow" />
+    <asp:ContentPlaceHolder ID="CPH_CSS" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="home">
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="sm" runat="server" />
+        <uc3:UC_Header ID="UC_Header1" runat="server" />
+        <asp:ContentPlaceHolder ID="CPH_Content" runat="server">
+        </asp:ContentPlaceHolder>
+        <uc2:UC_Footer ID="UC_Footer1" runat="server" />
+        <asp:ContentPlaceHolder ID="CPH_JS" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

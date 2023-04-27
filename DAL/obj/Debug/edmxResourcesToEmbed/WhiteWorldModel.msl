@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WhiteWorldModelStoreContainer" CdmEntityContainer="WhiteWorldEntities">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="WhiteWorldModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="Hiper" ColumnName="Hiper" />
+          <ScalarProperty Name="SonGiris" ColumnName="SonGiris" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="anamenu">
+      <EntityTypeMapping TypeName="WhiteWorldModel.anamenu">
+        <MappingFragment StoreEntitySet="anamenu">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="UstMenuId" ColumnName="UstMenuId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cms">
+      <EntityTypeMapping TypeName="WhiteWorldModel.cms">
+        <MappingFragment StoreEntitySet="cms">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
+          <ScalarProperty Name="Ayrinti" ColumnName="Ayrinti" />
+          <ScalarProperty Name="AnaBaslikId" ColumnName="AnaBaslikId" />
+          <ScalarProperty Name="BaslikId" ColumnName="BaslikId" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etiketler">
+      <EntityTypeMapping TypeName="WhiteWorldModel.etiketler">
+        <MappingFragment StoreEntitySet="etiketler">
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_kesim">
+      <EntityTypeMapping TypeName="WhiteWorldModel.g_kesim">
+        <MappingFragment StoreEntitySet="g_kesim">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_kumaslar">
+      <EntityTypeMapping TypeName="WhiteWorldModel.g_kumaslar">
+        <MappingFragment StoreEntitySet="g_kumaslar">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_renkler">
+      <EntityTypeMapping TypeName="WhiteWorldModel.g_renkler">
+        <MappingFragment StoreEntitySet="g_renkler">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_siluet">
+      <EntityTypeMapping TypeName="WhiteWorldModel.g_siluet">
+        <MappingFragment StoreEntitySet="g_siluet">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="g_yakatipi">
+      <EntityTypeMapping TypeName="WhiteWorldModel.g_yakatipi">
+        <MappingFragment StoreEntitySet="g_yakatipi">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gelinlikfotograflari">
+      <EntityTypeMapping TypeName="WhiteWorldModel.gelinlikfotograflari">
+        <MappingFragment StoreEntitySet="gelinlikfotograflari">
+          <ScalarProperty Name="Etiket" ColumnName="Etiket" />
+          <ScalarProperty Name="ArkaFoto" ColumnName="ArkaFoto" />
+          <ScalarProperty Name="OnFoto" ColumnName="OnFoto" />
+          <ScalarProperty Name="Anasayfa" ColumnName="Anasayfa" />
+          <ScalarProperty Name="FotoBuyuk" ColumnName="FotoBuyuk" />
+          <ScalarProperty Name="FotoKucuk" ColumnName="FotoKucuk" />
+          <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iletisim">
+      <EntityTypeMapping TypeName="WhiteWorldModel.iletisim">
+        <MappingFragment StoreEntitySet="iletisim">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Cevaplandi" ColumnName="Cevaplandi" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mansetler">
+      <EntityTypeMapping TypeName="WhiteWorldModel.mansetler">
+        <MappingFragment StoreEntitySet="mansetler">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+          <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sabitler">
+      <EntityTypeMapping TypeName="WhiteWorldModel.sabitler">
+        <MappingFragment StoreEntitySet="sabitler">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teksayfalar">
+      <EntityTypeMapping TypeName="WhiteWorldModel.teksayfalar">
+        <MappingFragment StoreEntitySet="teksayfalar">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="yorumlar">
+      <EntityTypeMapping TypeName="WhiteWorldModel.yorumlar">
+        <MappingFragment StoreEntitySet="yorumlar">
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+          <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+          <ScalarProperty Name="UstYorumId" ColumnName="UstYorumId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gelinlikler">
+      <EntityTypeMapping TypeName="WhiteWorldModel.gelinlikler">
+        <MappingFragment StoreEntitySet="gelinlikler">
+          <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+          <ScalarProperty Name="Goster" ColumnName="Goster" />
+          <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+          <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+          <ScalarProperty Name="EnCokSatan" ColumnName="EnCokSatan" />
+          <ScalarProperty Name="OzelUrun" ColumnName="OzelUrun" />
+          <ScalarProperty Name="YeniSezon" ColumnName="YeniSezon" />
+          <ScalarProperty Name="KumasId" ColumnName="KumasId" />
+          <ScalarProperty Name="YakaTipiId" ColumnName="YakaTipiId" />
+          <ScalarProperty Name="SiluetId" ColumnName="SiluetId" />
+          <ScalarProperty Name="RenkId" ColumnName="RenkId" />
+          <ScalarProperty Name="KesimId" ColumnName="KesimId" />
+          <ScalarProperty Name="Sezon" ColumnName="Sezon" />
+          <ScalarProperty Name="Beden" ColumnName="Beden" />
+          <ScalarProperty Name="Anasayfa" ColumnName="Anasayfa" />
+          <ScalarProperty Name="Detay" ColumnName="Detay" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

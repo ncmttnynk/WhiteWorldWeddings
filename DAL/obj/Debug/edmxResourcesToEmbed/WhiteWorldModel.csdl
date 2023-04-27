@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WhiteWorldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WhiteWorldEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="WhiteWorldModel.admin" />
+    <EntitySet Name="anamenu" EntityType="WhiteWorldModel.anamenu" />
+    <EntitySet Name="cms" EntityType="WhiteWorldModel.cms" />
+    <EntitySet Name="etiketler" EntityType="WhiteWorldModel.etiketler" />
+    <EntitySet Name="g_kesim" EntityType="WhiteWorldModel.g_kesim" />
+    <EntitySet Name="g_kumaslar" EntityType="WhiteWorldModel.g_kumaslar" />
+    <EntitySet Name="g_renkler" EntityType="WhiteWorldModel.g_renkler" />
+    <EntitySet Name="g_siluet" EntityType="WhiteWorldModel.g_siluet" />
+    <EntitySet Name="g_yakatipi" EntityType="WhiteWorldModel.g_yakatipi" />
+    <EntitySet Name="gelinlikfotograflari" EntityType="WhiteWorldModel.gelinlikfotograflari" />
+    <EntitySet Name="iletisim" EntityType="WhiteWorldModel.iletisim" />
+    <EntitySet Name="mansetler" EntityType="WhiteWorldModel.mansetler" />
+    <EntitySet Name="sabitler" EntityType="WhiteWorldModel.sabitler" />
+    <EntitySet Name="teksayfalar" EntityType="WhiteWorldModel.teksayfalar" />
+    <EntitySet Name="yorumlar" EntityType="WhiteWorldModel.yorumlar" />
+    <EntitySet Name="gelinlikler" EntityType="WhiteWorldModel.gelinlikler" />
+  </EntityContainer>
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SonGiris" Type="DateTime" Nullable="false" />
+    <Property Name="Hiper" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="anamenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UstMenuId" Type="Int32" Nullable="false" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="Yeni" Type="Boolean" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Kod" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BaslikId" Type="Int32" Nullable="false" />
+    <Property Name="AnaBaslikId" Type="Int32" Nullable="false" />
+    <Property Name="Ayrinti" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="OkunmaSayisi" Type="Int32" Nullable="false" />
+    <Property Name="AdminId" Type="Int32" Nullable="false" />
+    <Property Name="KayitTarihi" Type="DateTime" Nullable="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="etiketler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="g_kesim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_kumaslar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_renkler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Kod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_siluet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_yakatipi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gelinlikfotograflari">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+    <Property Name="FotoKucuk" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FotoBuyuk" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Anasayfa" Type="Boolean" Nullable="false" />
+    <Property Name="OnFoto" Type="Boolean" Nullable="false" />
+    <Property Name="ArkaFoto" Type="Boolean" Nullable="false" />
+    <Property Name="Etiket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="iletisim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" />
+    <Property Name="Cevaplandi" Type="Boolean" Nullable="false" />
+    <Property Name="Ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mansetler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Fotograf" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Yeni" Type="Boolean" Nullable="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sabitler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icerik" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teksayfalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Kod" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Fotograf" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Icerik" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="KayitTarihi" Type="DateTime" Nullable="false" />
+    <Property Name="AdminId" Type="Int32" Nullable="false" />
+    <Property Name="OkunmaSayisi" Type="Int32" Nullable="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UstYorumId" Type="Int32" Nullable="false" />
+    <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+    <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Eposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" />
+    <Property Name="Ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gelinlikler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Detay" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+    <Property Name="Anasayfa" Type="Boolean" Nullable="false" />
+    <Property Name="Beden" Type="Int32" Nullable="false" />
+    <Property Name="Sezon" Type="Int32" Nullable="false" />
+    <Property Name="KesimId" Type="Int32" Nullable="false" />
+    <Property Name="RenkId" Type="Int32" Nullable="false" />
+    <Property Name="SiluetId" Type="Int32" Nullable="false" />
+    <Property Name="YakaTipiId" Type="Int32" Nullable="false" />
+    <Property Name="KumasId" Type="Int32" Nullable="false" />
+    <Property Name="YeniSezon" Type="Boolean" Nullable="false" />
+    <Property Name="OzelUrun" Type="Boolean" Nullable="false" />
+    <Property Name="EnCokSatan" Type="Boolean" Nullable="false" />
+    <Property Name="Yeni" Type="Boolean" Nullable="false" />
+    <Property Name="Oncelik" Type="Int32" Nullable="false" />
+    <Property Name="Goster" Type="Boolean" Nullable="false" />
+    <Property Name="DilKod" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

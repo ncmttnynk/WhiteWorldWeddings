@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WhiteWorldModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sifre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SonGiris" Type="date" Nullable="false" />
+    <Property Name="Hiper" Type="bool" Nullable="false" />
+  </EntityType>
+  <EntityType Name="anamenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UstMenuId" Type="int" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="Yeni" Type="bool" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Kod" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="BaslikId" Type="int" Nullable="false" />
+    <Property Name="AnaBaslikId" Type="int" Nullable="false" />
+    <Property Name="Ayrinti" Type="mediumtext" />
+    <Property Name="OkunmaSayisi" Type="int" Nullable="false" />
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="KayitTarihi" Type="date" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="etiketler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GelinlikId" Type="int" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_kesim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_kumaslar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_renkler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Kod" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_siluet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="g_yakatipi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gelinlikfotograflari">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GelinlikId" Type="int" Nullable="false" />
+    <Property Name="FotoKucuk" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FotoBuyuk" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Anasayfa" Type="bool" Nullable="false" />
+    <Property Name="OnFoto" Type="bool" Nullable="false" />
+    <Property Name="ArkaFoto" Type="bool" Nullable="false" />
+    <Property Name="Etiket" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gelinlikler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Aciklama" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Detay" Type="mediumtext" Nullable="false" />
+    <Property Name="Anasayfa" Type="bool" Nullable="false" />
+    <Property Name="Beden" Type="int" Nullable="false" />
+    <Property Name="Sezon" Type="int" Nullable="false" />
+    <Property Name="KesimId" Type="int" Nullable="false" />
+    <Property Name="RenkId" Type="int" Nullable="false" />
+    <Property Name="SiluetId" Type="int" Nullable="false" />
+    <Property Name="YakaTipiId" Type="int" Nullable="false" />
+    <Property Name="KumasId" Type="int" Nullable="false" />
+    <Property Name="YeniSezon" Type="bool" Nullable="false" />
+    <Property Name="OzelUrun" Type="bool" Nullable="false" />
+    <Property Name="EnCokSatan" Type="bool" Nullable="false" />
+    <Property Name="Yeni" Type="bool" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iletisim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eposta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Aciklama" Type="mediumtext" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Cevaplandi" Type="bool" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mansetler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Url" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fotograf" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Yeni" Type="bool" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sabitler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Icerik" Type="longtext" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teksayfalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Kod" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Fotograf" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Icerik" Type="mediumtext" Nullable="false" />
+    <Property Name="KayitTarihi" Type="date" Nullable="false" />
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="OkunmaSayisi" Type="int" Nullable="false" />
+    <Property Name="Oncelik" Type="int" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+    <Property Name="DilKod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="yorumlar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UstYorumId" Type="int" Nullable="false" />
+    <Property Name="GelinlikId" Type="int" Nullable="false" />
+    <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Eposta" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Aciklama" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Tarih" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Goster" Type="bool" Nullable="false" />
+  </EntityType>
+  <Function Name="Rastgele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="whiteworld" ReturnType="int" />
+  <EntityContainer Name="WhiteWorldModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="anamenu" EntityType="Self.anamenu" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="cms" EntityType="Self.cms" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="etiketler" EntityType="Self.etiketler" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="g_kesim" EntityType="Self.g_kesim" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="g_kumaslar" EntityType="Self.g_kumaslar" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="g_renkler" EntityType="Self.g_renkler" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="g_siluet" EntityType="Self.g_siluet" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="g_yakatipi" EntityType="Self.g_yakatipi" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="gelinlikfotograflari" EntityType="Self.gelinlikfotograflari" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="gelinlikler" EntityType="Self.gelinlikler" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="iletisim" EntityType="Self.iletisim" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="mansetler" EntityType="Self.mansetler" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="sabitler" EntityType="Self.sabitler" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="teksayfalar" EntityType="Self.teksayfalar" Schema="whiteworld" store:Type="Tables" />
+    <EntitySet Name="yorumlar" EntityType="Self.yorumlar" Schema="whiteworld" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

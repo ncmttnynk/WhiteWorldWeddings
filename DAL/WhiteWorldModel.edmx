@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WhiteWorldModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kod" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SonGiris" Type="date" Nullable="false" />
+          <Property Name="Hiper" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="anamenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UstMenuId" Type="int" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="300" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="Yeni" Type="bool" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Kod" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="BaslikId" Type="int" Nullable="false" />
+          <Property Name="AnaBaslikId" Type="int" Nullable="false" />
+          <Property Name="Ayrinti" Type="mediumtext" />
+          <Property Name="OkunmaSayisi" Type="int" Nullable="false" />
+          <Property Name="AdminId" Type="int" Nullable="false" />
+          <Property Name="KayitTarihi" Type="date" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="etiketler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GelinlikId" Type="int" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_kesim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_kumaslar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_renkler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Kod" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_siluet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_yakatipi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gelinlikfotograflari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GelinlikId" Type="int" Nullable="false" />
+          <Property Name="FotoKucuk" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FotoBuyuk" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Anasayfa" Type="bool" Nullable="false" />
+          <Property Name="OnFoto" Type="bool" Nullable="false" />
+          <Property Name="ArkaFoto" Type="bool" Nullable="false" />
+          <Property Name="Etiket" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gelinlikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Detay" Type="mediumtext" Nullable="false" />
+          <Property Name="Anasayfa" Type="bool" Nullable="false" />
+          <Property Name="Beden" Type="int" Nullable="false" />
+          <Property Name="Sezon" Type="int" Nullable="false" />
+          <Property Name="KesimId" Type="int" Nullable="false" />
+          <Property Name="RenkId" Type="int" Nullable="false" />
+          <Property Name="SiluetId" Type="int" Nullable="false" />
+          <Property Name="YakaTipiId" Type="int" Nullable="false" />
+          <Property Name="KumasId" Type="int" Nullable="false" />
+          <Property Name="YeniSezon" Type="bool" Nullable="false" />
+          <Property Name="OzelUrun" Type="bool" Nullable="false" />
+          <Property Name="EnCokSatan" Type="bool" Nullable="false" />
+          <Property Name="Yeni" Type="bool" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Eposta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="mediumtext" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Cevaplandi" Type="bool" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mansetler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fotograf" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Yeni" Type="bool" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sabitler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Icerik" Type="longtext" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teksayfalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Baslik" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Kod" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Fotograf" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Icerik" Type="mediumtext" Nullable="false" />
+          <Property Name="KayitTarihi" Type="date" Nullable="false" />
+          <Property Name="AdminId" Type="int" Nullable="false" />
+          <Property Name="OkunmaSayisi" Type="int" Nullable="false" />
+          <Property Name="Oncelik" Type="int" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+          <Property Name="DilKod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yorumlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UstYorumId" Type="int" Nullable="false" />
+          <Property Name="GelinlikId" Type="int" Nullable="false" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Eposta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aciklama" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Tarih" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Ip" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Goster" Type="bool" Nullable="false" />
+        </EntityType>
+        <Function Name="Rastgele" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="whiteworld" ReturnType="int" />
+        <EntityContainer Name="WhiteWorldModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="anamenu" EntityType="Self.anamenu" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="cms" EntityType="Self.cms" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="etiketler" EntityType="Self.etiketler" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="g_kesim" EntityType="Self.g_kesim" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="g_kumaslar" EntityType="Self.g_kumaslar" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="g_renkler" EntityType="Self.g_renkler" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="g_siluet" EntityType="Self.g_siluet" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="g_yakatipi" EntityType="Self.g_yakatipi" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="gelinlikfotograflari" EntityType="Self.gelinlikfotograflari" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="gelinlikler" EntityType="Self.gelinlikler" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="iletisim" EntityType="Self.iletisim" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="mansetler" EntityType="Self.mansetler" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="sabitler" EntityType="Self.sabitler" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="teksayfalar" EntityType="Self.teksayfalar" Schema="whiteworld" store:Type="Tables" />
+          <EntitySet Name="yorumlar" EntityType="Self.yorumlar" Schema="whiteworld" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WhiteWorldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WhiteWorldEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin" EntityType="WhiteWorldModel.admin" />
+          <EntitySet Name="anamenu" EntityType="WhiteWorldModel.anamenu" />
+          <EntitySet Name="cms" EntityType="WhiteWorldModel.cms" />
+          <EntitySet Name="etiketler" EntityType="WhiteWorldModel.etiketler" />
+          <EntitySet Name="g_kesim" EntityType="WhiteWorldModel.g_kesim" />
+          <EntitySet Name="g_kumaslar" EntityType="WhiteWorldModel.g_kumaslar" />
+          <EntitySet Name="g_renkler" EntityType="WhiteWorldModel.g_renkler" />
+          <EntitySet Name="g_siluet" EntityType="WhiteWorldModel.g_siluet" />
+          <EntitySet Name="g_yakatipi" EntityType="WhiteWorldModel.g_yakatipi" />
+          <EntitySet Name="gelinlikfotograflari" EntityType="WhiteWorldModel.gelinlikfotograflari" />
+          <EntitySet Name="iletisim" EntityType="WhiteWorldModel.iletisim" />
+          <EntitySet Name="mansetler" EntityType="WhiteWorldModel.mansetler" />
+          <EntitySet Name="sabitler" EntityType="WhiteWorldModel.sabitler" />
+          <EntitySet Name="teksayfalar" EntityType="WhiteWorldModel.teksayfalar" />
+          <EntitySet Name="yorumlar" EntityType="WhiteWorldModel.yorumlar" />
+          <EntitySet Name="gelinlikler" EntityType="WhiteWorldModel.gelinlikler" />
+        </EntityContainer>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SonGiris" Type="DateTime" Nullable="false" />
+          <Property Name="Hiper" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="anamenu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UstMenuId" Type="Int32" Nullable="false" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="Yeni" Type="Boolean" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cms">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Kod" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BaslikId" Type="Int32" Nullable="false" />
+          <Property Name="AnaBaslikId" Type="Int32" Nullable="false" />
+          <Property Name="Ayrinti" Type="String" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="OkunmaSayisi" Type="Int32" Nullable="false" />
+          <Property Name="AdminId" Type="Int32" Nullable="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Nullable="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="etiketler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="g_kesim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_kumaslar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_renkler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Kod" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_siluet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="g_yakatipi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gelinlikfotograflari">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+          <Property Name="FotoKucuk" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FotoBuyuk" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Anasayfa" Type="Boolean" Nullable="false" />
+          <Property Name="OnFoto" Type="Boolean" Nullable="false" />
+          <Property Name="ArkaFoto" Type="Boolean" Nullable="false" />
+          <Property Name="Etiket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="iletisim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Eposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" />
+          <Property Name="Cevaplandi" Type="Boolean" Nullable="false" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mansetler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Fotograf" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Yeni" Type="Boolean" Nullable="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sabitler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Icerik" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teksayfalar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Kod" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Fotograf" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Icerik" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="KayitTarihi" Type="DateTime" Nullable="false" />
+          <Property Name="AdminId" Type="Int32" Nullable="false" />
+          <Property Name="OkunmaSayisi" Type="Int32" Nullable="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="yorumlar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UstYorumId" Type="Int32" Nullable="false" />
+          <Property Name="GelinlikId" Type="Int32" Nullable="false" />
+          <Property Name="AdSoyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Eposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gelinlikler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Baslik" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Aciklama" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Detay" Type="String" Nullable="false" MaxLength="16777215" FixedLength="false" Unicode="false" />
+          <Property Name="Anasayfa" Type="Boolean" Nullable="false" />
+          <Property Name="Beden" Type="Int32" Nullable="false" />
+          <Property Name="Sezon" Type="Int32" Nullable="false" />
+          <Property Name="KesimId" Type="Int32" Nullable="false" />
+          <Property Name="RenkId" Type="Int32" Nullable="false" />
+          <Property Name="SiluetId" Type="Int32" Nullable="false" />
+          <Property Name="YakaTipiId" Type="Int32" Nullable="false" />
+          <Property Name="KumasId" Type="Int32" Nullable="false" />
+          <Property Name="YeniSezon" Type="Boolean" Nullable="false" />
+          <Property Name="OzelUrun" Type="Boolean" Nullable="false" />
+          <Property Name="EnCokSatan" Type="Boolean" Nullable="false" />
+          <Property Name="Yeni" Type="Boolean" Nullable="false" />
+          <Property Name="Oncelik" Type="Int32" Nullable="false" />
+          <Property Name="Goster" Type="Boolean" Nullable="false" />
+          <Property Name="DilKod" Type="Int32" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WhiteWorldModelStoreContainer" CdmEntityContainer="WhiteWorldEntities">
+          <EntitySetMapping Name="admin">
+            <EntityTypeMapping TypeName="WhiteWorldModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="Hiper" ColumnName="Hiper" />
+                <ScalarProperty Name="SonGiris" ColumnName="SonGiris" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="anamenu">
+            <EntityTypeMapping TypeName="WhiteWorldModel.anamenu">
+              <MappingFragment StoreEntitySet="anamenu">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="UstMenuId" ColumnName="UstMenuId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cms">
+            <EntityTypeMapping TypeName="WhiteWorldModel.cms">
+              <MappingFragment StoreEntitySet="cms">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
+                <ScalarProperty Name="Ayrinti" ColumnName="Ayrinti" />
+                <ScalarProperty Name="AnaBaslikId" ColumnName="AnaBaslikId" />
+                <ScalarProperty Name="BaslikId" ColumnName="BaslikId" />
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="etiketler">
+            <EntityTypeMapping TypeName="WhiteWorldModel.etiketler">
+              <MappingFragment StoreEntitySet="etiketler">
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="g_kesim">
+            <EntityTypeMapping TypeName="WhiteWorldModel.g_kesim">
+              <MappingFragment StoreEntitySet="g_kesim">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="g_kumaslar">
+            <EntityTypeMapping TypeName="WhiteWorldModel.g_kumaslar">
+              <MappingFragment StoreEntitySet="g_kumaslar">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="g_renkler">
+            <EntityTypeMapping TypeName="WhiteWorldModel.g_renkler">
+              <MappingFragment StoreEntitySet="g_renkler">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="g_siluet">
+            <EntityTypeMapping TypeName="WhiteWorldModel.g_siluet">
+              <MappingFragment StoreEntitySet="g_siluet">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="g_yakatipi">
+            <EntityTypeMapping TypeName="WhiteWorldModel.g_yakatipi">
+              <MappingFragment StoreEntitySet="g_yakatipi">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gelinlikfotograflari">
+            <EntityTypeMapping TypeName="WhiteWorldModel.gelinlikfotograflari">
+              <MappingFragment StoreEntitySet="gelinlikfotograflari">
+                <ScalarProperty Name="Etiket" ColumnName="Etiket" />
+                <ScalarProperty Name="ArkaFoto" ColumnName="ArkaFoto" />
+                <ScalarProperty Name="OnFoto" ColumnName="OnFoto" />
+                <ScalarProperty Name="Anasayfa" ColumnName="Anasayfa" />
+                <ScalarProperty Name="FotoBuyuk" ColumnName="FotoBuyuk" />
+                <ScalarProperty Name="FotoKucuk" ColumnName="FotoKucuk" />
+                <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iletisim">
+            <EntityTypeMapping TypeName="WhiteWorldModel.iletisim">
+              <MappingFragment StoreEntitySet="iletisim">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Cevaplandi" ColumnName="Cevaplandi" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mansetler">
+            <EntityTypeMapping TypeName="WhiteWorldModel.mansetler">
+              <MappingFragment StoreEntitySet="mansetler">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+                <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sabitler">
+            <EntityTypeMapping TypeName="WhiteWorldModel.sabitler">
+              <MappingFragment StoreEntitySet="sabitler">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teksayfalar">
+            <EntityTypeMapping TypeName="WhiteWorldModel.teksayfalar">
+              <MappingFragment StoreEntitySet="teksayfalar">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="OkunmaSayisi" ColumnName="OkunmaSayisi" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+                <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+                <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
+                <ScalarProperty Name="Kod" ColumnName="Kod" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="yorumlar">
+            <EntityTypeMapping TypeName="WhiteWorldModel.yorumlar">
+              <MappingFragment StoreEntitySet="yorumlar">
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="GelinlikId" ColumnName="GelinlikId" />
+                <ScalarProperty Name="UstYorumId" ColumnName="UstYorumId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gelinlikler">
+            <EntityTypeMapping TypeName="WhiteWorldModel.gelinlikler">
+              <MappingFragment StoreEntitySet="gelinlikler">
+                <ScalarProperty Name="DilKod" ColumnName="DilKod" />
+                <ScalarProperty Name="Goster" ColumnName="Goster" />
+                <ScalarProperty Name="Oncelik" ColumnName="Oncelik" />
+                <ScalarProperty Name="Yeni" ColumnName="Yeni" />
+                <ScalarProperty Name="EnCokSatan" ColumnName="EnCokSatan" />
+                <ScalarProperty Name="OzelUrun" ColumnName="OzelUrun" />
+                <ScalarProperty Name="YeniSezon" ColumnName="YeniSezon" />
+                <ScalarProperty Name="KumasId" ColumnName="KumasId" />
+                <ScalarProperty Name="YakaTipiId" ColumnName="YakaTipiId" />
+                <ScalarProperty Name="SiluetId" ColumnName="SiluetId" />
+                <ScalarProperty Name="RenkId" ColumnName="RenkId" />
+                <ScalarProperty Name="KesimId" ColumnName="KesimId" />
+                <ScalarProperty Name="Sezon" ColumnName="Sezon" />
+                <ScalarProperty Name="Beden" ColumnName="Beden" />
+                <ScalarProperty Name="Anasayfa" ColumnName="Anasayfa" />
+                <ScalarProperty Name="Detay" ColumnName="Detay" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

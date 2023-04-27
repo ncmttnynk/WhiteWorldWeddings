@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5862a1bd4b9346c38b4ee513c48c947f" Name="Diagram1">
+        <EntityTypeShape EntityType="WhiteWorldModel.admin" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.anamenu" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.cms" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.etiketler" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.g_kesim" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.g_kumaslar" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.g_renkler" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.g_siluet" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.g_yakatipi" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.gelinlikfotograflari" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.iletisim" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.mansetler" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.sabitler" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.teksayfalar" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.yorumlar" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WhiteWorldModel.gelinlikler" Width="1.5" PointX="11.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
